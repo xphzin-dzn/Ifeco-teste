@@ -20,13 +20,7 @@ def ler_corrente(x2):
     tensao = valor_analogico * 3.3 / 4095  # Converter valor ADC para tensão
     corrente1 = (tensao - 2.291) / 0.066  # Calcular corrente usando o fator de sensibilidade do ACS712
     return corrente1
-def tensao(x):
- r1 = 30000.0
- r2 = 7500.0
- for i in range(5000):
-    tensaoDC = x.read()
-    tensaoDC = tensaoDC * (0.000973)
-    tensaoDC=  (tensaoDC +(tensaoDC / (r2/(r1+r2))))
+
     
  return tensaoDC
 # Loop principal
